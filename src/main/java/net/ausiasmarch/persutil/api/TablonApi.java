@@ -67,7 +67,7 @@ public class TablonApi {
     public ResponseEntity<Long> rellenaBlog(
             @PathVariable Long numPosts
     ) {
-        return ResponseEntity.ok(oBlogService.rellenaBlog(numPosts));
+        return ResponseEntity.ok(oTablonService.rellenaTablon(numPosts));
     }
 
 
@@ -77,36 +77,37 @@ public class TablonApi {
 
     // obtener post por id
     @GetMapping("/{id}")
-    public ResponseEntity<BlogEntity> get(@PathVariable Long id) {
-        return ResponseEntity.ok(oBlogService.get(id));
+    public ResponseEntity<TablonEntity> get(@PathVariable Long id) {
+        return ResponseEntity.ok(oTablonService.get(id));
     }
 
     // crear posts
     @PostMapping("")
-    public ResponseEntity<Long> create(@RequestBody BlogEntity blogEntity) {
-        return ResponseEntity.ok(oBlogService.create(blogEntity));
+    public ResponseEntity<Long> create(@RequestBody TablonEntity tablonEntity) {
+        return ResponseEntity.ok(oTablonService.create(tablonEntity));
     }
 
     // modificar posts
     @PutMapping("")
-    public ResponseEntity<Long> update(@RequestBody BlogEntity blogEntity) {
-        return ResponseEntity.ok(oBlogService.update(blogEntity));
+    public ResponseEntity<Long> update(@RequestBody TablonEntity tablonEntity) {
+        return ResponseEntity.ok(oTablonService.update(tablonEntity));
     }
 
     // borrar posts
     @DeleteMapping("/{id}")
     public ResponseEntity<Long> delete(@PathVariable Long id) {
-        return ResponseEntity.ok(oBlogService.delete(id));
+        return ResponseEntity.ok(oTablonService.delete(id));
     }
 
     // listado paginado de posts
     @GetMapping("")
-    public ResponseEntity<Page<BlogEntity>> getPage(Pageable oPageable) {
-        return ResponseEntity.ok(oBlogService.getPage(oPageable));
+    public ResponseEntity<Page<TablonEntity>> getPage(Pageable oPageable) {
+        return ResponseEntity.ok(oTablonService.getPage(oPageable));
         
     }
 
     @GetMapping("/count")
     public ResponseEntity<Long> count() {
-        return ResponseEntity.ok(oBlogService.count()); 
+        return ResponseEntity.ok(oTablonService.count()); 
     }
+}

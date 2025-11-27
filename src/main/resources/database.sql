@@ -55,7 +55,7 @@ ALTER TABLE `blog`
 
 -- ------------------------------------------------ TABLA ALVARO
 
-CREATE TABLE `tablon` (
+CREATE TABLE `contreras` (
   `id` bigint NOT NULL,
   `titulo` varchar(1024) COLLATE utf32_unicode_ci NOT NULL,
   `contenido` longtext COLLATE utf32_unicode_ci NOT NULL,
@@ -70,9 +70,15 @@ CREATE TABLE `tablon` (
 --
 
 --
--- Indices de la tabla `tablon`
+-- Indices de la tabla `blog`
 --
-ALTER TABLE `tablon`
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `contreras`
+--
+ALTER TABLE `contreras`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -80,9 +86,14 @@ ALTER TABLE `tablon`
 --
 
 --
--- AUTO_INCREMENT de la tabla `tablon`
+-- AUTO_INCREMENT de la tabla `blog`
 --
-ALTER TABLE `tablon`
+ALTER TABLE `blog`
   MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
+--
+-- AUTO_INCREMENT de la tabla `contreras`
+--
+ALTER TABLE `contreras`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 COMMIT;
